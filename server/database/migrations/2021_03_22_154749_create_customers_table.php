@@ -20,7 +20,7 @@ class CreateCustomersTable extends Migration
             $table->string('postal');
             $table->string('address');
             $table->string('email');
-            $table->date('birhdate');
+            $table->date('birthdate');
             $table->string('phone');
             $table->boolean('kramer_flag')->default(false)->comment('クレーマーフラグ');
             $table->timestamps();
