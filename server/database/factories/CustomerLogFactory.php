@@ -4,6 +4,7 @@ namespace Database\Factories;
 
 use App\Models\CustomerLog;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Str;
 
 class CustomerLogFactory extends Factory
 {
@@ -22,7 +23,9 @@ class CustomerLogFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'customer_id' => mt_rand(1, 30),
+            'user_id' => mt_rand(1, 4),
+            'log' => $this->faker->sentence(40),
         ];
     }
 }
