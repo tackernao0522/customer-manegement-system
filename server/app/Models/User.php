@@ -58,4 +58,18 @@ class User extends Authenticatable
     {
         return $this->hasMany(CustomerLog::class);
     }
+
+    /**
+     * スーパーバイザーであればtrueを返す
+     * @return bool
+     */
+    public function isSuperVisor(): bool
+    {
+        return $this['role_id'] === Role::SUPER_VISOR_ID;
+    }
+
+    public static function enumSuperVisor()
+    {
+        return User::where('role_id', '=', Role::SUPER_VISOR_ID)->get();
+    }
 }
