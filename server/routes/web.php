@@ -13,10 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
@@ -51,3 +47,5 @@ Route::get('/page_a', function () {
 Route::get('/page_b', function () {
     return view('page_b');
 });
+
+Route::get('/', [\App\Http\Controllers\TopPageController::class, 'top_page'])->name('top_page');
