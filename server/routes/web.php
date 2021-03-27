@@ -51,3 +51,4 @@ Route::get('/page_b', function () {
 Route::get('/', [\App\Http\Controllers\TopPageController::class, 'top_page'])->name('top_page');
 Route::get('/users', \App\Http\Controllers\UserController::class)->name('社員一覧')->middleware('auth');
 Route::get('/roles', \App\Http\Controllers\RoleController::class)->name('ロール一覧')->middleware('auth');
+Route::resource('/customers', \App\Http\Controllers\customerController::class)->middleware('auth');
