@@ -19,6 +19,15 @@
           <p style="font-size: 0.75rem;">0 問題ない顧客, 1 クレーマー顧客</p>
           <p style="text-align: center;"><button class="btn btn-primary" type="submit">　　登　録　　</button></p>
         </form>
+
+        {{-- エラーを表示  --}}
+        @if ( $errors->any() )
+        <ul>
+          @foreach($errors->all() as $error)
+          <li>{{ $error }}</li>
+          @endforeach
+        </ul>
+        @endif
       </div>
     </div>
   </div>

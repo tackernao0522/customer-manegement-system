@@ -43,7 +43,19 @@ class CustomerController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $attribute = request()->validate([
+        'name' => ['required', 'min:3', 'max:32'],
+            'shop_id' => ['required', 'Numeric', 'Between:1,3'],
+            'postal' => ['required',],
+            'address' => ['required',],
+            'email' => ['required', 'E-Mail'],
+            'birthdate' => ['required', 'Date'],
+            'phone' => ['required',],
+            'kramer_flag' => ['required', 'Numeric', 'Between:0,1'],
+        ]);
+        $customer = Customer::create($attribute);
+
+        return redirect()->route('customers.index');
     }
 
     /**
