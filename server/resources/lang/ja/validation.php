@@ -74,7 +74,7 @@ return [
   'required_with'        => ':valuesのうちいずれかが指定された時:attributeは必須です。',
   'required_with_all'    => ':valuesのうちすべてが指定された時:attributeは必須です。',
   'required_without'     => ':valuesのうちいずれかがが指定されなかった時:attributeは必須です。',
-  'required_without_all' => ':valuesのうちすべてが指定されなかった時:attributeは必須です。',
+  'required_without_all' => ':values のどれか一つは入力してください。',
   'same'                 => ':attributeが:otherと一致しません。',
   'size'                 => [
     'numeric' => ':attributeには:sizeを指定してください。',

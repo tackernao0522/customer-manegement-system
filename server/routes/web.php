@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,3 +22,5 @@ Route::get('/', [\App\Http\Controllers\TopPageController::class, 'top_page'])->n
 Route::get('/users', \App\Http\Controllers\UserController::class)->name('社員一覧')->middleware('auth');
 Route::get('/roles', \App\Http\Controllers\RoleController::class)->name('ロール一覧')->middleware('auth');
 Route::resource('/customers', \App\Http\Controllers\CustomerController::class)->middleware('auth');
+Route::get('/customer_search', [App\Http\Controllers\CustomerSearchController::class, 'index'])->middleware('auth');
+Route::post('/customer_search', [App\Http\Controllers\CustomerSearchController::class, 'search'])->middleware('auth');
