@@ -4,29 +4,31 @@
 |        | GET|HEAD  | /                         | top_page          | App\Http\Controllers\TopPageController@top_page                        | web        |
 |        | GET|HEAD  | api/user                  |                   | Closure                                                                | api        |
 |        |           |                           |                   |                                                                        | auth:api   |
-|        | GET|HEAD  | customer_search           |                   | App\Http\Controllers\CustomerSearchController@index                    | web        |
-|        |           |                           |                   |                                                                        | auth       |
 |        | POST      | customer_search           |                   | App\Http\Controllers\CustomerSearchController@search                   | web        |
 |        |           |                           |                   |                                                                        | auth       |
-|        | POST      | customers                 | customers.store   | App\Http\Controllers\CustomerController@store                          | web        |
+|        | GET|HEAD  | customer_search           |                   | App\Http\Controllers\CustomerSearchController@index                    | web        |
 |        |           |                           |                   |                                                                        | auth       |
 |        | GET|HEAD  | customers                 | customers.index   | App\Http\Controllers\CustomerController@index                          | web        |
 |        |           |                           |                   |                                                                        | auth       |
+|        | POST      | customers                 | customers.store   | App\Http\Controllers\CustomerController@store                          | web        |
+|        |           |                           |                   |                                                                        | auth       |
 |        | GET|HEAD  | customers/create          | customers.create  | App\Http\Controllers\CustomerController@create                         | web        |
+|        |           |                           |                   |                                                                        | auth       |
+|        | DELETE    | customers/{customer}      | customers.destroy | App\Http\Controllers\CustomerController@destroy                        | web        |
 |        |           |                           |                   |                                                                        | auth       |
 |        | PUT|PATCH | customers/{customer}      | customers.update  | App\Http\Controllers\CustomerController@update                         | web        |
 |        |           |                           |                   |                                                                        | auth       |
 |        | GET|HEAD  | customers/{customer}      | customers.show    | App\Http\Controllers\CustomerController@show                           | web        |
 |        |           |                           |                   |                                                                        | auth       |
-|        | DELETE    | customers/{customer}      | customers.destroy | App\Http\Controllers\CustomerController@destroy                        | web        |
-|        |           |                           |                   |                                                                        | auth       |
 |        | GET|HEAD  | customers/{customer}/edit | customers.edit    | App\Http\Controllers\CustomerController@edit                           | web        |
+|        |           |                           |                   |                                                                        | auth       |
+|        | POST      | customers/{customer}/logs |                   | App\Http\Controllers\CustomerLogController                             | web        |
 |        |           |                           |                   |                                                                        | auth       |
 |        | GET|HEAD  | home                      | home              | App\Http\Controllers\HomeController@index                              | web        |
 |        |           |                           |                   |                                                                        | auth       |
-|        | GET|HEAD  | login                     | login             | App\Http\Controllers\Auth\LoginController@showLoginForm                | web        |
-|        |           |                           |                   |                                                                        | guest      |
 |        | POST      | login                     |                   | App\Http\Controllers\Auth\LoginController@login                        | web        |
+|        |           |                           |                   |                                                                        | guest      |
+|        | GET|HEAD  | login                     | login             | App\Http\Controllers\Auth\LoginController@showLoginForm                | web        |
 |        |           |                           |                   |                                                                        | guest      |
 |        | POST      | logout                    | logout            | App\Http\Controllers\Auth\LoginController@logout                       | web        |
 |        | POST      | password/confirm          |                   | App\Http\Controllers\Auth\ConfirmPasswordController@confirm            | web        |
@@ -37,9 +39,9 @@
 |        | POST      | password/reset            | password.update   | App\Http\Controllers\Auth\ResetPasswordController@reset                | web        |
 |        | GET|HEAD  | password/reset            | password.request  | App\Http\Controllers\Auth\ForgotPasswordController@showLinkRequestForm | web        |
 |        | GET|HEAD  | password/reset/{token}    | password.reset    | App\Http\Controllers\Auth\ResetPasswordController@showResetForm        | web        |
-|        | GET|HEAD  | register                  | register          | App\Http\Controllers\Auth\RegisterController@showRegistrationForm      | web        |
-|        |           |                           |                   |                                                                        | guest      |
 |        | POST      | register                  |                   | App\Http\Controllers\Auth\RegisterController@register                  | web        |
+|        |           |                           |                   |                                                                        | guest      |
+|        | GET|HEAD  | register                  | register          | App\Http\Controllers\Auth\RegisterController@showRegistrationForm      | web        |
 |        |           |                           |                   |                                                                        | guest      |
 |        | GET|HEAD  | roles                     | ロール一覧        | App\Http\Controllers\RoleController                                    | web        |
 |        |           |                           |                   |                                                                        | auth       |

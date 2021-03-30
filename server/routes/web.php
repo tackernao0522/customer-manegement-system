@@ -24,3 +24,4 @@ Route::get('/roles', \App\Http\Controllers\RoleController::class)->name('ロー�
 Route::resource('/customers', \App\Http\Controllers\CustomerController::class)->middleware('auth');
 Route::get('/customer_search', [App\Http\Controllers\CustomerSearchController::class, 'index'])->middleware('auth');
 Route::post('/customer_search', [App\Http\Controllers\CustomerSearchController::class, 'search'])->middleware('auth');
+Route::post('/customers/{customer}/logs', \App\Http\Controllers\CustomerLogController::class)->middleware('auth');

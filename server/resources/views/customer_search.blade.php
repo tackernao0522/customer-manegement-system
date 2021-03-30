@@ -13,7 +13,7 @@
               <tr>
                 <td>氏名</td>
                 <td>
-                  <input type="text" name="name" value="{{ isset($validated['name'])?$valdated['name']:'' }}">
+                  <input type="text" name="name" value="{{ isset($validated['name'])?$validated['name']:'' }}">
                 </td>
               </tr>
               <tr>
